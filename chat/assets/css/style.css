@@ -1,0 +1,10 @@
+.radius-20{
+    border-radius: 20px !important;
+}
+.content{
+    height: 512px;
+    overflow: auto;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+}
