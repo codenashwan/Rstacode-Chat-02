@@ -57,7 +57,7 @@ function users($condition , $isAdd){
        <img src="assets/img/'.$gender.'.svg" width="40">
 <h3 class="mt-2 ml-2 text-gray">'.x($row['username']).'</h3>';
 if($isAdd === 0){
-$check = mysqli_query($db , "SELECT * FROM `send_request` WHERE (`request_id` = '$user_result_id' AND `request_id` <> '$userid') OR (`response_id` = '$user_result_id' AND `response_id` <> '$userid')");
+$check = mysqli_query($db , "SELECT * FROM `send_request` WHERE (`request_id` = '$user_result_id' OR `request_id` = '$userid') AND (`response_id` = '$userid' OR `response_id` = '$user_result_id') ");
 if (mysqli_num_rows($check) == 0){
 echo '<img id="send" friend="'.$user_result_id.'"  src="assets/img/add.svg" width="30" style="position: absolute;right: 0;margin-top: 7px;margin-right: 42px;">';
 }
